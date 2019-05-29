@@ -2,24 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public class spawner : MonoBehaviour
+public class left : MonoBehaviour
 {
-    public float spawnRate = 1f;
+    public float speed;
 
-    public GameObject hexagonPrefab;
-
-    private float nextTimeToSpawn = 0f;
 
     // Update is called once per frame
     void Update()
     {
-        if (Time.time >= nextTimeToSpawn)
-        {
-            Instantiate(hexagonPrefab, Vector3.zero, Quaternion.identity);
-            nextTimeToSpawn = Time.time + 1f / spawnRate;
-        }
-    }
+        transform.position += Vector3.left * speed * Time.deltaTime;
 
+    }
 
 }
